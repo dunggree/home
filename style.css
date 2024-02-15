@@ -1,0 +1,52 @@
+/*  기본 색상 코드 
+    cyan    #00A1E9
+    magenta #E40081
+    yellow  #FFF100
+*/
+
+
+html, body              {margin: 0; width: 100%;
+                         background: white;
+                         font-family: 'Orbit', sans-serif;
+                         font-weight: 400;
+                        }
+body                    {overflow-x: hidden;
+                        }
+main                    {background-color: #00A1E9;
+                         width: calc(100vw - (100vh / 3));
+                         top: 0; padding-left: calc(100vh / 3);
+                         overflow-y: scroll;
+                        }
+header                  {width: calc(100vh / 3); height: 100vh;
+                         top: 0; left: 0; position: fixed;
+                         background-color: #00A1E9;
+                        }
+h2                      {font-weight: 400;}
+
+/* navigation style */
+.navigation             {z-index: 3;}
+.outside-box1           {background-color: #E40081; color: #E40081;}
+.outside-box2           {background-color: #00A1E9; color: #00A1E9;}
+.outside-box3           {background-color: #FFF100; color: #FFF100;}
+.inner-box              {background-color: white; border-radius: 100%;
+                         height: calc(100vh/3);
+                         display: flex; flex-direction: column; justify-content: center;
+                         text-align: center; line-height: 100%;
+                        }
+
+.first-section          {width: 100%;}
+.expression             {display: flex; flex-direction: row; justify-content: space-between;}
+.exp                    {background: linear-gradient(90deg, rgba(0,161,233,1) 0%, rgba(255,241,0,0.3) 100%);
+                         color: white; height: 100%;
+                        }
+.press                  {color: white; display: flex; padding-right: 5px;}
+
+.background-gradation   {width: 150vw; height: 150vw;
+                         border-radius: 150vw ;
+                         background: radial-gradient(50% 50% at 50% 50%, #E40081 53%, rgba(255, 255, 255, 0.00) 100%);
+                        }
+.round                  {width: 100vw; height: 100vw; margin-top: 50vw; margin-left: 25vw;
+                        background-color: white; color: #00A1E9;
+                        border-radius: 100vw;
+                        text-align: right;
+                        }
