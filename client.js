@@ -127,19 +127,18 @@ function numCrop(){
         localStorage.setItem(dateString + 'sugarcone', sugarconeCroped);
         sugarcone.innerText = String(sugarconeCroped).padStart(3, "0");
     }
-    localStorage.setItem(localStorage.length, text);
 }
 
 function loadCrops(){
     if (localStorage.getItem(dateString + 'bearlic')) {
-        bearlicCroped = localStorage.getItem(dateString + 'bearlic');
+        bearlicCroped = Number(localStorage.getItem(dateString + 'bearlic'));
         bearlic.innerText = String(bearlicCroped).padStart(3, "0");
     } else {
         bearlicCroped = 0
         bearlic.innerText = String(bearlicCroped).padStart(3, "0");
     }
     if (localStorage.getItem(dateString + 'sugarcone')) {
-        sugarconeCroped = localStorage.getItem(dateString + 'sugarcone');
+        sugarconeCroped = Number(localStorage.getItem(dateString + 'sugarcone'));
         sugarcone.innerText = String(sugarconeCroped).padStart(3, "0");
     } else {
         bearlicCroped = 0
