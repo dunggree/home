@@ -16,61 +16,99 @@
 
 <!-- body start -->
 <body>
+  <div id="top" onclick="window.scrollTo(0,0)";></div>
   <!-- navigation -->
   <header class="navigation">
-    <div class="outside-box1">
-      <div class="inner-box">
-        <h2>소개</h2>
-      </div>
+    <div class="boxcover">
+    <div id = "box1cover"></div>
+    <div id = "box2cover"></div>
+    <div id = "box3cover"></div>
     </div>
+    <a href="#second-section" class="navigation-click">
+      <div class="outside-box1">
+        <div class="inner-box">
+          <h2>소개</h2>
+        </div>
+      </div>
+    </a>
+    <a href="#third-section" class="navigation-click">
     <div class="outside-box2">
       <div class="inner-box">
         <h2>게임</h2>
       </div>
     </div>
-    <div class="outside-box3">
-      <div class="inner-box">
-        <h2>멤버</h2>
+    </a>
+    <a href="#forth-section" class="navigation-click">
+      <div class="outside-box3">
+        <div class="inner-box">
+          <h2>멤버</h2>
+        </div>
       </div>
-    </div>
+    </a>
   </header>
   <main>
-    <div class="first-section">
-      <img src="./basic/logo.svg" alt="덩그리" width="100%">
-      <div class="expression">
-        <h2 class="exp">
-          : 덩그렇지 않도록 빛을 비춥니다.
-        </h2>
-        <div class="press">
-          <h3>>>>&nbsp&nbsp</h3>
-          <div>
-            <h3> Press</h3>
-            <h3>[]</h3>
-            <h3>to start</h3>
+      <div id="section12">
+      <div id="first-section">
+
+        <div class="expression">
+          <h2 class="exp">
+          &nbsp;  덩그렇지 않도록 빛을 비춥니다.
+          </h2>
+          <div class="press">
+            <h3>>>>&nbsp&nbsp</h3>
+            <div>
+              <h3> Press</h3>
+              <h3>[ ]</h3>
+              <h3>to start</h3>
+            </div>
           </div>
         </div>
       </div>
-      <div class="round-exp">
-        <div class="background-gradation">
-          <div class="round">
-            <h3>
-              스튜디오 덩그리는 마음이 맞는 다섯 명이 모여<br>
-              게임을 개발하는 스튜디오입니다.<br><br>
-              무릇 창작자라면 어릴 적부터 꿈꾸어 온 세계가 있습니다.<br>
-              세상에 나올 일 없이 마음 한켠에 덩그러니 놓여있는 이 이야기들은<br>
-              소중히 다루지 않으면 쉽게 퇴색되기 일쑤입니다.<br>
-              그래서 스튜디오 덩그리는 "한켠"에 스포트라이트를 쏘기로 했습니다.<br>
-              빛이 든 공간에서 색을 가진 이야기는 비로소 하나의 콘텐츠가 됩니다.<br><br>
-              스튜디오 덩그리가 이번에 조명할 컬러칩은 푸른색으로,<br>
-              이 컬러칩과 함께 개발 진행중인 게임 <푸른집>을 최초로 선보입니다.<br><br>
-              그렇게 한켠의 이야기는 덩그렇지 않게 됩니다.
-            </h3>
+      <div class="logo">
+        <img src="./basic/logo.svg" alt="덩그리" object-fit="contain">
+      </div>
+      <!-- 소개글 -->
+      <div id="second-section">
+        <div id="white-circle">
+          <div id="definition">스튜디오 덩그리는 마음이 맞는 다섯 명이 모여<br/>게임을 개발하는 스튜디오입니다.<br/><br/>무릇 창작자라면 어릴 적부터 꿈꾸어 온 세계가 있습니다.<br/>세상에 나올 일 없이 마음 한켠에 덩그러니 놓여있는 이 이야기들은<br/>소중히 다루지 않으면 쉽게 퇴색되기 일쑤입니다. <br/><br/>그래서 스튜디오 덩그리는 "한켠"에 스포트라이트를 쏘기로 했습니다. <br/>빛이 든 공간에서 색을 가진 이야기는 비로소 하나의 콘텐츠가 됩니다.<br/>스튜디오 덩그리가 이번에 조명할 컬러칩은 푸른색으로, <br/>이 컬러칩과 함께 개발 진행중인 게임 <푸른집>을 최초로 선보입니다.<br/><br/>그렇게 한켠의 이야기는 덩그렇지 않게 됩니다.
           </div>
         </div>
-        
+        <div id="background-gradation"></div>
       </div>
     </div>
+      <!-- 게임 박스 들어갈 곳 -->
+      <div id="popup">
+        <img src="./basic/game_Burnout.png" alt="Popup 1" class="burn-out-img">
+        <img src="./basic/game_Gacha.png" alt="Popup 2" class="GACHA-img">
+        <img src="./basic/game_KHC.png" alt="Popup 3" class="KHC-img">
+        <img src="./basic/game_nightsky.png" alt="Popup 4" class="nightsky-img">
+      </div>
+      <div id="third-section">
+            <div id="room-background">
+                <div class="box_close" id="bluebox" onclick="location.href='https://naver.com'"></div>
+                <div id="foldergrid">
+                  <div class="gamefolder" id="burn-out"></div>
+                  <div class="gamefolder" id="GACHA"></div>
+                  <div class="gamefolder" id="KHC"></div>
+                  <div class="gamefolder" id="nightsky"></div> 
+                </div>
+              </div>
+        </div>
+      <!-- 멤버 -->
+      <div id="forth-section">
+        <div id="memberlist">김수연      Suyeon        >>>       Designer, Animator<br><br>김유빈      Yubin         >>>       Designer, Planner, Programmer<br><br>김한슬      Hanseul       >>>       Designer, Programmer<br><br>박현경      Hyeongyung    >>>       Designer, Animator<br><br>한혜린      Hyerin        >>>       Designer, Background Artist</div>
+        <div class="rightlogo"><img src="./basic/rightlogo.svg" alt="로고" width="100%" class="rightrogo"></div>
+        <img src="./basic/dotline.svg" alt="선" width="100%" class="dotline">
+        <div class="member">Member</div>
+      </div>
   </main>
-  <script type="text/javascript" src="./main.js"></script>
+  <footer>
+    <div id="press" style="color: #E40081; font-size: 256px; font-family: Inter; font-weight: 700; word-wrap: break-word">PRESS</div>
+    <div id="spacebar" style="color: #FFF100; font-size: 256px; font-family: Inter; font-weight: 700; word-wrap: break-word">SPACEBAR</div>
+    <div id="start" style="color: #00A1E9; font-size: 256px; font-family: Inter; font-weight: 700; word-wrap: break-word">TO START</div>
+    <div id="instaout"><a href="https://www.instagram.com/studio_dunggree/" id="instain">INSTAGRAM</a></div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./javascript.js"></script>
 </body>
 </html>
