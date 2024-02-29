@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./blue_zip.css">
+  <title>푸른집</title>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<!-- body start -->
+<body>
+  <audio autoplay loop="1">
+    <source src="./blue_zip/sound/us.mp3" type="audio/mp3">
+  </audio>
+  <!-- background -->
+  <video class="background" autoplay width="100vw" loop="1">
+    <source src="./blue_zip/web background/Web_Sky.mp4" type="video/mp4">
+  </video>
+  <!-- video-control -->
+  <div class="control">
+    <img class="ground" src="./blue_zip/web background/Ground_Web.png">
+  </div>
+  
+  <!-- UI -->
+  <main>
+    <div class="icon-box">
+      <div class="icon-box-colum">
+        <div class="icon-box-colum box">
+          <img id="seed" class="icon" src="./blue_zip/web icon/seed.png">
+        </div>
+        <div class="icon-box-colum box">
+          <img id="water" class="icon" src="./blue_zip/web icon/water.png">
+        </div>
+      </div>
+      <div>
+        <div class="click">
+          <h3>click →</h3>
+        </div>
+        <div class="click none">
+          <h3>click →</h3>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <div class="etc">
+    <!-- count -->
+    <div class="today">
+      <h1>Today&nbsp;&nbsp;</h1>
+      <img src="./blue_zip/web icon/bearlic.png">
+      <h2 id="bearlic">000</h2>
+      <img src="./blue_zip/web icon/sugarcone.png">
+      <h2 id="sugarcone">000</h2>
+    </div>
+    <a class="home" >
+      <img>
+      <h1>Home</h1>
+    </a>
+  </div>
+
+  <!-- home -->
+  <script type="text/javascript" src="./client.js"></script
+</body>
+</html>
