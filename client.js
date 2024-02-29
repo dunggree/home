@@ -1,3 +1,8 @@
+// 접속 시 기존 목록 불러오기
+window.onload = function() {
+    loadCrops();
+}
+
 const control = document.querySelector('.control');
 
 const click = document.querySelectorAll('.click');
@@ -20,6 +25,12 @@ const water = document.querySelector('#water');
 
 let clicked = 0;
 let randomPlant = "";
+
+var today = new Date();
+var year = today.getFullYear();
+var month = ('0' + (today.getMonth() + 1)).slice(-2);
+var day = ('0' + today.getDate()).slice(-2);
+var dateString = year + '-' + month  + '-' + day;
 
 
 seed.addEventListener('click', function() {
@@ -104,57 +115,34 @@ function dropedWater() {
         img.className = "ground";
         control.appendChild(img);
     }
-    sendData();
 }
 
 function numCrop(){
     if (randomPlant == "gom"){
         bearlicCroped += 3;
+        localStorage.setItem(dateString + 'bearlic', bearlicCroped);
         bearlic.innerText = String(bearlicCroped).padStart(3, "0");
     } else {
         sugarconeCroped += 3;
-        sugarcone.innerText = String(sugarconeCroped).padStart(3, "0")
+        localStorage.setItem(dateString + 'sugarcone', sugarconeCroped);
+        sugarcone.innerText = String(sugarconeCroped).padStart(3, "0");
+    }
+    localStorage.setItem(localStorage.length, text);
+}
+
+function loadCrops(){
+    if (localStorage.getItem(dateString + 'bearlic')) {
+        bearlicCroped = localStorage.getItem(dateString + 'bearlic');
+        bearlic.innerText = String(bearlicCroped).padStart(3, "0");
+    } else {
+        bearlicCroped = 0
+        bearlic.innerText = String(bearlicCroped).padStart(3, "0");
+    }
+    if (localStorage.getItem(dateString + 'sugarcone')) {
+        sugarconeCroped = localStorage.getItem(dateString + 'sugarcone');
+        sugarcone.innerText = String(sugarconeCroped).padStart(3, "0");
+    } else {
+        bearlicCroped = 0
+        bearlic.innerText = String(bearlicCroped).padStart(3, "0");
     }
 }
-
-function sendData() {
-    fetch('/dataConnect', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ randomPlant: randomPlant })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
-}
-
-
-/* mysql 실행문
-
--- Active: 1709045267400@@127.0.0.1@3306@harvested_crop
-CREATE TABLE daily_harvested(  
-    date DATE NOT NULL PRIMARY KEY DEFAULT (CURRENT_DATE),
-    bearlic int DEFAULT 0,
-    sugarcone int DEFAULT 0
-);
-
-INSERT INTO daily_harvested (date, bearlic) 
-VALUES (CURDATE(), 3) 
-ON DUPLICATE KEY UPDATE bearlic=bearlic+3;
-
-INSERT INTO daily_harvested (date, sugarcone) 
-VALUES (CURDATE(), 3) 
-ON DUPLICATE KEY UPDATE sugarcone=sugarcone+3;
-
-*/
