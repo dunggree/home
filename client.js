@@ -1,6 +1,14 @@
 const control = document.querySelector('.control');
 
 const click = document.querySelectorAll('.click');
+
+const uiClicked = document.getElementById("ui-clicked");
+const diged = document.getElementById("diged");
+const watered = document.getElementById("watered");
+const firecracker = document.getElementById("firecracker")
+const plantcrop = document.getElementById("plantcrop");
+const walk = document.getElementById("walk");
+
 const bearlic = document.querySelector('#bearlic');
 const sugarcone = document.querySelector('#sugarcone');
 
@@ -16,12 +24,19 @@ let randomPlant = "";
 
 seed.addEventListener('click', function() {
     console.log("seed clicked!")
+    uiClicked.play();
+    console.log(clicked);
     if (clicked == 0){
         dropedSeed();
-        clicked = 1;
         click[0].className += " none";
-        click[1].classList.remove("none");
-        console.log(clicked)
+        clicked = 0.5;
+        setTimeout(function() {
+            diged.play();
+        }, 100);
+        setTimeout(function() {
+            click[1].classList.remove("none");
+            clicked = 1;
+        }, 1000);
     } else {
         return
     }
@@ -29,12 +44,30 @@ seed.addEventListener('click', function() {
 
 water.addEventListener('click', function(){
     console.log("water clicked!")
+    uiClicked.play();
+    console.log(clicked);
     if (clicked == 1){
         dropedWater();
-        clicked = 0;
         click[1].className += " none";
-        click[0].classList.remove("none");
-        console.log(clicked)
+        clicked = 1.5;
+        watered.play();
+        setTimeout(function() {
+            firecracker.play();
+            numCrop();
+        }, 3500);
+        setTimeout(function() {
+            walk.play();
+        }, 5500);
+        setTimeout(function() {
+            plantcrop.play();
+        }, 8500);
+        setTimeout(function(){
+            walk.play();
+        }, 10500)
+        setTimeout(function() {
+            click[0].classList.remove("none");
+            clicked = 0;
+        }, 13000);
     } else {
         return
     } 
@@ -71,7 +104,6 @@ function dropedWater() {
         img.className = "ground";
         control.appendChild(img);
     }
-    numCrop();
     sendData();
 }
 
@@ -107,83 +139,6 @@ function sendData() {
     });
 }
 
-
-
-/*
-const seed = document.querySelector('#seed');
-const water = document.querySelector('#water');
-
-let randomPlant = "";
-let draged = 0;
-
-seed.addEventListener('click', function() {
-    console.log("seed clicked!")
-    if (draged == 0){
-        dropedSeed();
-        draged = 1;
-        click[0].className += " none";
-        click[1].classList.remove("none");
-    } else {
-        return
-    }
-})
-
-water.addEventListener('click', function(){
-    console.log("water clicked!")
-    if (draged == 1){
-        dropedWater();
-        draged = 0;
-        click[1].className += " none";
-        click[0].classList.remove("none");
-    } else {
-        return
-    } 
-})
-
-function dropedSeed() {
-    let img = document.createElement('img');
-    let random = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
-    if (random == 1){
-        control.replaceChildren();
-        img.src = `./blue_zip/web background/GOM_Seed.png?timestamp=${new Date().getTime()}`;
-        img.className = "ground";
-        control.appendChild(img);
-        randomPlant = "gom";
-    } else {
-        control.replaceChildren();
-        img.src = `./blue_zip/web background/SUG_Seed.png?timestamp=${new Date().getTime()}`;
-        img.className = "ground";
-        control.appendChild(img);
-        randomPlant = "sugarCorn";
-    }
-}
-
-function dropedWater() {
-    let img = document.createElement('img');
-    if (randomPlant == "gom"){
-        control.replaceChildren();
-        img.src = `./blue_zip/web background/GOM_Harvest.png?timestamp=${new Date().getTime()}`;
-        img.className = "ground";
-        control.appendChild(img);
-    } else {
-        control.replaceChildren();
-        img.src = `./blue_zip/web background/SUG_Harvest.png?timestamp=${new Date().getTime()}`;
-        img.className = "ground";
-        control.appendChild(img);
-    }
-    numCrop();
-}
-
-function numCrop(){
-    if (randomPlant == "gom"){
-        bearlicCroped += 3;
-        bearlic.innerText = String(bearlicCroped).padStart(3, "0");
-    } else {
-        sugarconeCroped += 3;
-        sugarcone.innerText = String(sugarconeCroped).padStart(3, "0")
-    }
-}
-*/
 
 /* mysql 실행문
 
