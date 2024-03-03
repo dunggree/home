@@ -20,6 +20,7 @@ html, body              {margin: 0; overflow-x: hidden; overflow-y: hidden;
                          background: white;
                          font-family: 'DungGeunMo', sans-serif;
                          font-size: 10px; font-weight: 400; line-height: 0%;
+                         background-color: #6979aa;
                         }
 main                    {
                          position: fixed; top: 0;
