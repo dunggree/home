@@ -4,105 +4,30 @@
     yellow  #FFF100
 */
 
-:root {
-    --mouseX: 0;
-    --mouseY: 0;}
+/* 기본 css
+   스크롤 설정, 부드럽게 스크롤
+*/
 
-#top{position: fixed;
-    width: 5vw;
-    height: 100%;
-    content: url(./basic/top.svg);
-    z-index: 20000;
-    right: 0;
-    margin-right: 2.5%;
-    top: 42vh;}
-
-#top:hover {content: url(./basic/topon.svg);}
-
-html, body  {margin: 0; width: 100%;
+html        {
+            scroll-behavior: smooth;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            }
+/* 폰트 설정, 배경 색 */
+body        {margin: 0; width: 100vw;
             font-family: 'Orbit', sans-serif;
             font-weight: 400;
-            scroll-behavior: smooth;
-            }
-body        {overflow-y: scroll;
-            overflow-x: hidden;
             background-color: #00A1E9;
             }
-main        {width: calc(100vw - (100vh / 3));
-             top: 0; 
-             padding-left: calc(100vh / 3);
-            }
-header      {width: calc(100vh / 3); height: 100vh;
-             top: 0; left: 0; position: fixed;
-             z-index: 1000;
-            }
-h2          {font-weight: 400;}
-
-footer {width: calc(100vw - (100vh / 3));
-    height: 100vh;
-    top: 0; 
-    padding-left: calc(100vh / 3);
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 5%;}
-
-#press{position: relative;
-    animation: pressAnimation 10s linear infinite; /* 애니메이션 지속 시간 및 반복 설정 */
-}
-
-#spacebar{position: relative;
-    animation: spacebarAnimation 12s linear infinite; /* 애니메이션 지속 시간 및 반복 설정 */
-}
-
-#start{position: relative;
-    animation: startAnimation 14s linear infinite; /* 애니메이션 지속 시간 및 반복 설정 */
-}
-
-#instaout{width: calc(100vw - (100vh / 3));
-        position: relative;
-        padding-left: 5%;
-        padding-bottom: 3.5%;
-        height: 30vh;
-    background-color: white;}
-
-#instain{
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-family: 'Orbit', sans-serif;
-    text-decoration: none;
-    color: black;}
-
-#instain:visited {
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-family: 'Orbit', sans-serif;
-    text-decoration: none;
-    color: black;}
-
-@keyframes pressAnimation {
-0% {left: -100%; /* 시작 위치 */}
-100% {left: 100%; /* 끝나는 위치 */}}
-
-@keyframes spacebarAnimation {
-0% {right: -100%; /* 시작 위치 */}
-100% {right: 100%; /* 끝나는 위치 */}}
-
-@keyframes startAnimation {
-0% {left: -100%; /* 시작 위치 */}
-100% {left: 100%; /* 끝나는 위치 */}}
-
-
-
-
-
-
-
+/* 스크롤 바 안 보이게 만들기 */
 body::-webkit-scrollbar {
-    display: none; /* 크롬, 사파리, 오페라, 엣지 */
-}
+    display: none;
+    }
 
+/* 네비게이션 사이즈 설정 */
+header      {width: calc(100vh / 3); height: 100vh;
+            top: 0; left: 0; position: fixed; z-index: 3;
+            }
 /* navigation style */
 .outside-box1 {background-color: #E40081; color: #E40081; position: relative;}
 .outside-box2 {background-color: #00A1E9; color: #00A1E9; position: relative;}
@@ -112,53 +37,62 @@ body::-webkit-scrollbar {
              display: flex; flex-direction: column; justify-content: center;
              text-align: center; line-height: 100%;
             }
-
 .boxcover{width: calc(100vh/3);
     height: 100vh;
     position: absolute;
     display: flex; flex-direction: column; justify-content: center;
     text-align: center; line-height: 100%;
     pointer-events: none;}
-
-.outside-box1:hover #box1cover{
-        display: flex;}
-
 #box1cover {
     display: none;
     position: absolute;
-  height: calc(100vh / 3);
-  width: calc(100vh / 3);
-content: url(./basic/navbox1.svg);
-  background-color: #E40081;
-  z-index: 10000;
-  top: 0;
-  pointer-events: none;
+    height: calc(100vh / 3);
+    width: calc(100vh / 3);
+    content: url(./basic/navbox1.svg);
+    background-color: #E40081;
+    z-index: 4;
+    top: 0;
+    pointer-events: none;
 }
-
 #box2cover {
     display: none;
     position: absolute;
-  height: calc(100vh / 3);
-  width: calc(100vh / 3);
-content: url(./basic/navbox2.svg);
-  background-color: #00A1E9;
-  z-index: 10000;
-  pointer-events: none;
+    height: calc(100vh / 3);
+    width: calc(100vh / 3);
+    content: url(./basic/navbox2.svg);
+    background-color: #00A1E9;
+    z-index: 4;
+    pointer-events: none;
 }
-
 #box3cover {
     display: none;
     position: absolute;
-  height: calc(100vh / 3);
-  width: calc(100vh / 3);
-content: url(./basic/navbox3.svg);
-  background-color: #FFF100;
-  z-index: 10000;
-  bottom: 0;
-  pointer-events: none;
+    height: calc(100vh / 3);
+    width: calc(100vh / 3);
+    content: url(./basic/navbox3.svg);
+    background-color: #FFF100;
+    z-index: 4;
+    bottom: 0;
+    pointer-events: none;
 }
 
 
+/* 최상단으로 가는 버튼 */
+#top        {position: fixed;
+    height: 10vh;
+    content: url(./basic/top.svg);
+    z-index: 5;
+    right: 0;
+    top: 85vh;
+    padding: 2.5vh 2.5vh 2.5vh 2.5vh ;}
+    #top:hover  {content: url(./basic/topon.svg);}
+    
+    
+/* header 제외 main 사이즈 설정 */
+main        {width: calc(100vw - (100vh / 3));
+            padding-left: calc(100vh / 3);
+            background-color: #00A1E9;
+            }
 
 
 #first-section{width: 100%;}
@@ -169,11 +103,6 @@ content: url(./basic/navbox3.svg);
 
 .logo{position: relative;
     z-index: 30; width: 98%; margin: 1%; object-fit: contain;}
-
-.rightlogo{position: relative;
-            z-index: 5;
-            margin-top: -0.4%;
-            margin-right: -0.4%;}
 
 #second-section{width: 100%;
                 margin-top: 20%;
@@ -198,7 +127,7 @@ content: url(./basic/navbox3.svg);
             margin-bottom: 5%;
             background-color: white; 
             border-radius: 50%;
-            z-index: 20;}
+            z-index: 2;}
             
 #white-circle:after{content:"";
                     display: block;
@@ -211,7 +140,7 @@ content: url(./basic/navbox3.svg);
                         margin-bottom: 5%;
                         border-radius: 150vw;
                         background: radial-gradient(50% 50% at 50% 50%, #E40081 70%, rgba(255, 255, 255, 0.00) 100%);
-                        z-index: 5;}
+                        z-index: 1;}
 
 #background-gradation:after{content:"";
                     display: block;
@@ -236,58 +165,6 @@ content: url(./basic/navbox3.svg);
                 z-index: 100;
             }
 
-
-                /*
-#blue-cover:hover {
-  clip-path: circle(50% at 50% 50%);
-
-
-#thirdcover{width:100%;
-            height: 100vh;
-            position: absolute;
-            z-index: 5000;
-            background-color: red;
-
-            pointer-events: none;}
-
-#thirdcover::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  clip-path: circle(50% at 50% 50%);
-  z-index: -1;
-}}*/
-
-
-
-
-
-/*
-#mask-layer {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: 5000;
-    background-color: red;
-  }
-*/
-/*
-#room-mask {
-                position: absolute;
-                width: 500px;
-                height: 500px; 
-                background-color: #00A1E9;
-                border-radius: 50%;
-                pointer-events: none;
-                transition: all 0.1s ease-out;}
-
-#room-mask{position: absolute;}
-*/
-
 #foldergrid{
     margin-left: 59.3%;
     margin-top: 22%;
@@ -307,13 +184,6 @@ content: url(./basic/navbox3.svg);
 .gamefolder:hover{
 background-image: url(./basic/folder_open.png)
 }
-
-/*
-#burn-out{display: none;}
-#GACHA{display: none;}
-#KHC{display: none;}
-#nightsky{display: none;}
-*/
 
 #bluebox {
     margin-left: 12%;
@@ -345,21 +215,11 @@ background-image: url(./basic/folder_open.png)
         pointer-events: none;
     }
 
+/*  */
 .burn-out-img{display: none;}
 .GACHA-img{display: none;}
 .KHC-img{display: none;}
 .nightsky-img{display: none;}
-
-    /*
-.popup-img {
-        max-width: 100%;
-        max-height: 100%;
-        display: none;}
-*/
-
-
-
-
 
 
 #forth-section{overflow: hidden;
@@ -367,32 +227,90 @@ background-image: url(./basic/folder_open.png)
                 width: 100%;
                 height: 150vh;
                 background: linear-gradient(#E40081 0%, white 30%);
-                z-index: 10;}
-#memberlist{white-space: pre;
-            position: absolute;
-            text-align: left;  
-            font-size: 1.8rem; 
-            font-family: Orbit; 
-            font-weight: 400;
-            margin-top: 24%;
-            margin-left: 12%;
-            z-index: 10;
-            color: #00A1E9;
-            line-height: 54px;}
+                z-index: 2;}
 
+.rightlogo      {position: relative;
+                z-index: 3;
+                margin-top: -0.4%;
+                margin-right: -0.4%;}
 
-.member{color:white;
-        font-size: 4rem;
-        margin-top: -98%;
-        margin-left: 3%;}
+.member         {color:white;
+                font-size: 4rem;
+                margin-top: -98%;
+                margin-left: 3%;}
 .dotline {
-    position: absolute;
-    width: 100%; 
-    height: 100%;
-    margin-top: -100%; 
-    margin-left: -29.3%;
-    z-index: 100;}
-
-
+                position: absolute;
+                width: 100%; 
+                height: 100%;
+                margin-top: -100%; 
+                margin-left: -29.3%;
+                z-index: 100;}
+#memberlist{white-space: pre;
+                position: absolute;
+                text-align: left;  
+                font-size: 1.8rem; 
+                margin-top: 24%;
+                margin-left: 12%;
+                z-index: 4;
+                color: #00A1E9;
+                line-height: 54px;}
 
 a.navigation-click{text-decoration: none;}
+
+footer {width: calc(100vw - (100vh / 3));
+    height: 100vh;
+    padding-left: calc(100vh / 3);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5%;}
+
+#press  {color: #E40081;
+    position: relative;
+    font-size: 25vh; word-wrap: break-word;
+    height: 30vh;
+    animation: pressAnimation 10s linear infinite; /* 애니메이션 지속 시간 및 반복 설정 */
+}
+
+#spacebar{color: #00A1E9;
+    position: relative;
+    font-size: 25vh; word-wrap: break-word;
+    height: 30vh;
+    animation: spacebarAnimation 12s linear infinite; /* 애니메이션 지속 시간 및 반복 설정 */
+}
+
+#start  {color: #FFF100;
+    position: relative;
+    font-size: 25vh; word-wrap: break-word;
+    height: 30vh;
+    animation: startAnimation 14s linear infinite; /* 애니메이션 지속 시간 및 반복 설정 */
+}
+
+#instaout{
+    padding-left: 5%;
+    height: 10vh;
+    }
+
+#instain{
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: black;}
+
+#instain:visited {
+    font-size: 1.8rem;
+    font-family: 'Orbit', sans-serif;
+    text-decoration: none;
+    color: black;}
+
+@keyframes pressAnimation {
+0% {left: -100%; /* 시작 위치 */}
+100% {left: 100%; /* 끝나는 위치 */}}
+
+@keyframes spacebarAnimation {
+0% {right: -100%; /* 시작 위치 */}
+100% {right: 100%; /* 끝나는 위치 */}}
+
+@keyframes startAnimation {
+0% {left: -100%; /* 시작 위치 */}
+100% {left: 100%; /* 끝나는 위치 */}}
