@@ -1,3 +1,16 @@
+$(document).ready(function(){       
+    var scroll_pos = 0;
+    $(document).scroll(function() { 
+        scroll_pos = $(this).scrollTop();
+        if(scroll_pos > 500) {
+            $("body").css('background-color', '#fff');
+        } else {
+            $("body").css('background-color', '#00A1E9');
+        }
+    });
+});
+
+
 $("body").on('mouseover', 'a', function (e) {
   var $link = $(this),
        href = $link.attr('href') || $link.data("href");
@@ -13,9 +26,8 @@ $("body").on('mouseover', 'a', function (e) {
 
 document.addEventListener('DOMContentLoaded', function () {
   var roomBackground = document.getElementById('room-background');
-
+    // 마우스 포인터 위치 가지고 와서 원 위치 지정
   document.addEventListener('mousemove', function (e) {
-    // 마우스 위치에서 오른쪽으로 50px, 아래로 30px 이동한 위치에 원의 중앙을 배치
     roomBackground.style.clipPath = `circle(300px at ${e.clientX - 350}px ${e.clientY + 0}px)`;
   });
 });
