@@ -64,13 +64,13 @@ water.addEventListener('click', function(){
         watered.play();
         setTimeout(function() {
             firecracker.play();
-            numCrop();
         }, 3500);
         setTimeout(function() {
             walk.play();
         }, 5500);
         setTimeout(function() {
             plantcrop.play();
+            numCrop();
         }, 8500);
         setTimeout(function(){
             walk.play();
