@@ -231,6 +231,7 @@ content: url(./basic/navbox3.svg);
                 object-fit: cover;
                 position: absolute;
                 background-image: url(./basic/room.png);
+                background-size: cover;
                 overflow: hidden;
                 z-index: 100;
             }
