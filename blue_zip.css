@@ -16,6 +16,7 @@
 }
 
 html, body              {margin: 0; overflow-x: hidden; overflow-y: hidden;
+                         height: 100vh; width: 100vw;
                          background: white;
                          font-family: 'DungGeunMo', sans-serif;
                          font-size: 10px; font-weight: 400; line-height: 0%;
@@ -72,3 +73,36 @@ h3                      {font-size: 3rem;}
 .home                   {display: flex; flex-direction: row; align-items: center;
                          color: white; gap: 30px;
                         }
+
+
+@media screen and (max-width: 1000px) {
+  .background           {height: 100vh; width: auto;
+                         position: fixed; top: 0; left: 0;
+                         display: flex;
+                         justify-content: center;
+                         margin-left: -50%;
+                        }
+  .ground               {height: 100vh; width: auto;
+                         position: fixed; top: 0; bottom: 0;
+                         display: flex;
+                         justify-content: center;
+                         margin-left: -155%;
+                        }
+  h1                    {font-size: 3rem;}
+  h2                    {font-size: 3rem;}
+  h3                    {font-size: 2.5rem;}
+  .etc                  {width: calc(100vw - 120px); position: absolute; bottom: 0;
+                         display: flex; justify-content: space-between;
+                         padding-left: 12px; padding-right: 12px;
+                        }
+  .today                {gap: 6px;}
+  .home                 {gap: 6px;}
+  .icon-box             {padding: 0px;}
+  .icon                 {object-fit: contain; width: 100px;}
+  .click                {height: 100px;}
+  .box                  {width: 100px; height: 100px; object-fit: contain; background-size: cover;  }
+  .box:hover            {
+                         width: 100px; height: 100px
+                        }
+  .icon-size            {width: 50px;}
+}
