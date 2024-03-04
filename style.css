@@ -81,7 +81,7 @@ header      {width: calc(100vh / 3); height: 100vh;
 #top        {position: fixed;
     height: 10vh;
     content: url(./basic/top.svg);
-    z-index: 10000;
+    z-index: 8005;
     right: 0;
     top: 85vh;
     padding: 2.5vh 2.5vh 2.5vh 2.5vh ;}
