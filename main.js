@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var roomBackground = document.getElementById('room-background');
     // 마우스 포인터 위치 가지고 와서 원 위치 지정
   document.addEventListener('mousemove', function (e) {
-    roomBackground.style.clipPath = `circle(300px at ${e.clientX - 315}px ${e.clientY + 25}px)`;
+    roomBackground.style.clipPath = `circle(300px at ${e.clientX - 315}px ${e.clientY + 10}px)`;
   });
 });
 
