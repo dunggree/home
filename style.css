@@ -166,8 +166,8 @@ main        {width: calc(100vw - (100vh / 3));
             }
 
 #foldergrid{
-    margin-left: 57.7%;
-    margin-top: 20%;
+    margin-left: 57.4%;
+    margin-top: 23%;
     height: 38vh;
     width: 20vw;
     display: grid;
