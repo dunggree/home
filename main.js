@@ -27,11 +27,10 @@ $("body").on('mouseover', 'a', function (e) {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  var roomBackground = document.getElementById('room-background');
+var roomBackground = document.getElementById('room-background');
     // 마우스 포인터 위치 가지고 와서 원 위치 지정
   document.addEventListener('mousemove', function (e) {
-    roomBackground.style.clipPath = `circle(300px at ${e.clientX - 350}px ${e.clientY + 0}px)`;
+    roomBackground.style.clipPath = `circle(300px at ${e.clientX - 330}px ${e.clientY + 0}px)`;
   });
 });
 
