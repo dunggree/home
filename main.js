@@ -6,8 +6,11 @@ $(document).ready(function(){
             $("body").css('background-color', '#fff');
         } else {
             $("body").css('background-color', '#00A1E9');
+
         }
+
     });
+
 });
 
 
@@ -28,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var roomBackground = document.getElementById('room-background');
     // 마우스 포인터 위치 가지고 와서 원 위치 지정
   document.addEventListener('mousemove', function (e) {
-    roomBackground.style.clipPath = `circle(300px at ${e.clientX - 330}px ${e.clientY + 0}px)`;
+    roomBackground.style.clipPath = `circle(300px at ${e.clientX - 350}px ${e.clientY + 0}px)`;
   });
 });
 
@@ -136,3 +139,34 @@ bluebox.addEventListener('mouseleave', function () {
     bluebox.classList.remove('box_open1', 'box_open2');
     bluebox.classList.add('box_close');
 });
+
+// 이벤트 리스너를 페이지가 로드될 때 한 번만 추가
+window.addEventListener('load', function() {
+  // Intersection Observer 생성
+  const observer = new IntersectionObserver(handleIntersect, { root: null, rootMargin: '0px', threshold: 1.0 });
+  // 감지할 요소 선택
+  const target = document.querySelector('#instain');
+  // 요소 감지 시작
+  observer.observe(target);
+  console.log(target)
+});
+
+// instain이 화면 안에 있는지 확인하는 코드
+function handleIntersect(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log("endtry is intersecting")
+      window.addEventListener('keyup', handleKeyPress); // 키보드 입력 감지
+    } else {
+      window.removeEventListener('keyup', handleKeyPress); // 감지 해제
+    }
+  });
+}
+
+function handleKeyPress(event) {
+  console.log("key pressed");
+  if (event.key == ' ' || event.key == 'SpaceBar' || event.key == '32') { // edge, chrome, spacebar key code가 다 달라서 각각 스페이스바 감지
+    window.location.href = "blue_zip.html"; // 푸른집으로 이동
+    console.log("spacebar pressed");
+  }
+}
