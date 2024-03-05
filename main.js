@@ -29,10 +29,10 @@ $("body").on('mouseover', 'a', function (e) {
 
 var roomBackground = document.getElementById('room-background');
     // 마우스 포인터 위치 가지고 와서 원 위치 지정
-  document.addEventListener('mousemove', function (e) {
+document.addEventListener('mousemove', function (e) {
     roomBackground.style.clipPath = `circle(300px at ${e.clientX - 330}px ${e.clientY + 0}px)`;
-  });
 });
+
 
 //좌측 내비게이션 이미지 변경
 document.addEventListener('DOMContentLoaded', function () {
